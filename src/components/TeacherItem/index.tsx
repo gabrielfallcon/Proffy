@@ -4,27 +4,40 @@ import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import { MainList } from './styles';
 
-const TeacherItem: React.FC = () => {
+export interface Teacher {
+  id: number;
+  name: string;
+  avatar: string;
+  whatsapp: string;
+  bio: string;
+  subject: string;
+  cost: number;
+}
+
+interface TeacherProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherProps> = ({ teacher }) => {
   return (
     <MainList>
       <article className="teacher-item">
         <header>
-          <img src="https://avatars1.githubusercontent.com/u/47330738?s=460&u=02d0cda3560db0a0cf54e34ca235df32c7f4531d&v=4" alt="profile" />
+          <img src={teacher.avatar} />
           <div>
-            <strong>Gabriel Nascimento</strong>
-            <span>GraphQL</span>
+            <strong>{teacher.name}</strong>
+            <span>{teacher.subject}</span>
           </div>
         </header>
 
         <p>
-          Apaixonado por aprender coisas novas e <br /> <br />
-            venho aqui para ensinar GraphQL dessa vez
-          </p>
+          {teacher.bio}  
+        </p>
 
         <footer>
           <p>
             Preço/hora
-              <strong>R$ 750,00</strong>
+              <strong>R$ {teacher.cost},00</strong>
           </p>
           <button type="button">
             <img src={whatsappIcon} alt="Whatsapp" />

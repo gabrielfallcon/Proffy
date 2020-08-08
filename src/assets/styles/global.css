@@ -15,6 +15,7 @@
   --color-text-complement: #9C98A6;
   --color-text-base: #6A6180;
   --color-line-in-white: #E6E6F0;
+  --color-line-in-purple-clean: #774dd633;
   --color-input-background: #F8F8FC;
   --color-button-text: #FFFFFF;
   --color-box-base: #FFFFFF;
@@ -41,7 +42,7 @@ body {
   justify-content: center;
 }
 
-body, input, button, textarea {
+body, input, button, textarea, select {
   font: 500 1.6rem Poppins;
   color: var(--color-text-base);
 }
